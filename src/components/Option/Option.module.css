@@ -1,0 +1,51 @@
+.list {
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.list:not(:last-child) {
+  border-bottom: 1px solid #e0e7ec;
+}
+.optionName {
+  font-size: 14px;
+  color: #2a323f;
+}
+.checkbox {
+  height: 14px;
+  width: 14px;
+  border: 1px solid #c7d0d6;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.activeList .checkbox {
+  background-color: #70bcfe;
+}
+.activeList .checkbox::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(1);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  background-color: #fff;
+}
+
+/* .hoveredList .checkbox {
+  background-color: #c7d0d6;
+  border: 0;
+} */
+.hoveredList .checkbox ::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(1);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  background-color: #c7d0d6;
+}
